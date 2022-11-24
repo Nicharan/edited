@@ -1,0 +1,121 @@
+1.Register table. 
+
+create table Register_Details(CusID int PRIMARY KEY, 
+
+                       Name varchar(32) NOT NULL, 
+
+                       Address varchar(64) NOT NULL, 
+
+                       Age int NOT NULL, 
+
+                       Nationality varchar(16) NOT NULL, 
+
+                       Contacts int NOT NULL, 
+          
+                       mailid varchar(100),
+ 
+                       password varchar(20), 
+);
+
+2.Car Details
+
+   create table car_details (
+
+              carno varchar(30) PRIMARY KEY, 
+
+              no_of_seats int,
+ 
+              priceperkm int,
+ 
+              milegeperlitre int,
+   
+              car_type varchar(20),
+
+              car_model varchar(20),
+
+              );
+
+3.Discount Details
+     
+        create table Discount(
+
+              DiID int PRIMARY KEY,
+
+              Amount int,
+
+              Description varchar(250),
+
+             ); 
+
+
+4.Bank Details
+    
+    create table card_details( 
+   
+                     CardNum int,
+
+                     CardName varchar(20),
+
+                     ExpiryDate date,
+
+                     CVV int,
+ 
+                    );
+
+
+
+
+5.Driver details
+
+           Create table Driver_details(
+              
+           Driver_id int,
+  
+           Name varchar2(20),
+        
+           DLNO varchar(20),
+
+           Gender varchar2(20),
+
+           Email_id varchar2(20),
+
+           Mobile int,
+
+           CONSRAINT pk_Driver_details PRIMARY KEY(Driver_id)
+);
+
+6.Booking Details
+
+         Create table booking_details(
+
+                       Pickup DATETIME,
+ 
+                       Dropout DATETIME,
+
+                       Amount int,
+
+                       Booking_status varchar(20) NOT NULL,
+
+                       Drive_option varchar(20),
+
+                       Coupon_id int,
+
+                       Book_id int,
+
+                       Date DATE(30),
+
+                       Security deposit int,
+
+               
+                       CONSTRAINT  FOREIGN KEY(Book_id) REFERENCES car_details(carno); 
+
+        
+                      );
+
+
+ 
+
+
+
+
+              
